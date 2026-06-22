@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | La Dolce Vita</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i> La Dolce Vita
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <a href="index.html">Home</a>
+                <a href="menu.html" class="active">Menu</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="#" class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <main class="menu-page">
+        <h1>Our Menu</h1>
+        <p class="menu-subtitle">Click on any item to add it to your cart</p>
+
+        <!-- Appetizers -->
+        <section class="menu-category">
+            <h2>Appetizers</h2>
+            <div class="menu-grid">
+                <div class="menu-card" data-id="1" data-name="Bruschetta" data-price="9.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=400)" alt="Bruschetta">
+                    <div class="menu-card-content">
+                        <h3>Bruschetta</h3>
+                        <p>Toasted bread with tomatoes, garlic, and fresh basil</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$9.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-id="2" data-name="Calamari Fritti" data-price="14.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400)" alt="Calamari">
+                    <div class="menu-card-content">
+                        <h3>Calamari Fritti</h3>
+                        <p>Crispy fried calamari with marinara sauce</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$14.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-id="3" data-name="Caprese Salad" data-price="12.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=400)" alt="Caprese">
+                    <div class="menu-card-content">
+                        <h3>Caprese Salad</h3>
+                        <p>Fresh mozzarella, tomatoes, and basil with balsamic glaze</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$12.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pasta -->
+        <section class="menu-category">
+            <h2>Pasta</h2>
+            <div class="menu-grid">
+                <div class="menu-card" data-id="4" data-name="Spaghetti Carbonara" data-price="18.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400)" alt="Carbonara">
+                    <div class="menu-card-content">
+                        <h3>Spaghetti Carbonara</h3>
+                        <p>Classic Roman pasta with pancetta, egg, and pecorino</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$18.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-id="5" data-name="Fettuccine Alfredo" data-price="17.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=400)" alt="Alfredo">
+                    <div class="menu-card-content">
+                        <h3>Fettuccine Alfredo</h3>
+                        <p>Creamy parmesan sauce with fresh fettuccine</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$17.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-id="6" data-name="Lasagna Bolognese" data-price="21.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=400)" alt="Lasagna">
+                    <div class="menu-card-content">
+                        <h3>Lasagna Bolognese</h3>
+                        <p>Layers of pasta, meat sauce, béchamel, and cheese</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$21.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pizza -->
+        <section class="menu-category">
+            <h2>Pizza</h2>
+            <div class="menu-grid">
+                <div class="menu-card" data-id="7" data-name="Margherita Pizza" data-price="16.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400)" alt="Margherita">
+                    <div class="menu-card-content">
+                        <h3>Margherita</h3>
+                        <p>San Marzano tomatoes, fresh mozzarella, basil</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$16.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-id="8" data-name="Quattro Formaggi" data-price="19.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400)" alt="Four Cheese">
+                    <div class="menu-card-content">
+                        <h3>Quattro Formaggi</h3>
+                        <p>Mozzarella, gorgonzola, fontina, and parmesan</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$19.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-id="9" data-name="Diavola Pizza" data-price="18.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400)" alt="Diavola">
+                    <div class="menu-card-content">
+                        <h3>Diavola</h3>
+                        <p>Spicy salami, tomato sauce, mozzarella, chili flakes</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$18.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts -->
+        <section class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-grid">
+                <div class="menu-card" data-id="10" data-name="Tiramisu" data-price="10.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400)" alt="Tiramisu">
+                    <div class="menu-card-content">
+                        <h3>Tiramisu</h3>
+                        <p>Classic Italian dessert with espresso and mascarpone</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$10.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-id="11" data-name="Panna Cotta" data-price="9.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400)" alt="Panna Cotta">
+                    <div class="menu-card-content">
+                        <h3>Panna Cotta</h3>
+                        <p>Vanilla cream with berry compote</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$9.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-id="12" data-name="Cannoli" data-price="8.99">
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1631206753348-db44968fd440?w=400)" alt="Cannoli">
+                    <div class="menu-card-content">
+                        <h3>Cannoli</h3>
+                        <p>Crispy shells filled with sweet ricotta cream</p>
+                        <div class="menu-card-footer">
+                            <span class="price">$8.99</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i> Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-clear" id="clearCart">Clear Cart</button>
+            <button class="btn btn-primary btn-checkout">Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Business Hours</h4>
+                <p>Monday - Thursday: 11am - 10pm</p>
+                <p>Friday - Saturday: 11am - 11pm</p>
+                <p>Sunday: 12pm - 9pm</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Italian Way, New York, NY</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@ladolcevita.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 La Dolce Vita. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

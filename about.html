@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | La Dolce Vita</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i> La Dolce Vita
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="#" class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <main class="about-page">
+        <section class="about-hero">
+            <h1>Our Story</h1>
+        </section>
+
+        <section class="about-content">
+            <div class="about-text">
+                <h2>A Family Tradition Since 1985</h2>
+                <p>La Dolce Vita began as a dream shared by Giuseppe and Maria Rossi, who immigrated to New York from Naples in 1982. With nothing but their grandmother's recipes and an unwavering passion for authentic Italian cuisine, they opened our doors on a snowy December evening in 1985.</p>
+                
+                <p>What started as a small 20-seat trattoria has grown into one of New York's most beloved Italian restaurants, yet we've never forgotten our roots. Every dish that leaves our kitchen carries the same love and dedication that Nonna Rosa poured into her cooking in the hills of Campania.</p>
+
+                <h2>Our Philosophy</h2>
+                <p>We believe that great food starts with great ingredients. That's why we source our tomatoes from San Marzano, our olive oil from Tuscany, and our mozzarella fresh daily from local artisans who share our commitment to quality. Our pasta is made in-house every morning, just as it has been for nearly four decades.</p>
+
+                <h2>Signature Dishes</h2>
+                <p>While every item on our menu is crafted with care, a few dishes have become legendary among our guests:</p>
+                <ul>
+                    <li><strong>Nonna's Lasagna</strong> – The original recipe from Maria's grandmother, layered with love</li>
+                    <li><strong>Osso Buco Milanese</strong> – Slow-braised veal shanks that melt in your mouth</li>
+                    <li><strong>Tiramisu</strong> – Made fresh daily with espresso from our 1960s Faema machine</li>
+                </ul>
+
+                <h2>Our Mission</h2>
+                <p>At La Dolce Vita, we're not just serving food—we're creating memories. Whether you're celebrating a milestone, enjoying a quiet date night, or gathering with family, we want every moment at our table to feel like home. Because to us, you're not just customers. You're family.</p>
+            </div>
+
+            <div class="about-images">
+                <img src="[images.unsplash.com](https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600)" alt="Restaurant founders">
+                <img src="[images.unsplash.com](https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600)" alt="Chef preparing food">
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-clear" id="clearCart">Clear Cart</button>
+            <button class="btn btn-primary btn-checkout">Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Business Hours</h4>
+                <p>Monday - Thursday: 11am - 10pm</p>
+                <p>Friday - Saturday: 11am - 11pm</p>
+                <p>Sunday: 12pm - 9pm</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Italian Way, New York, NY</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@ladolcevita.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 La Dolce Vita. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
