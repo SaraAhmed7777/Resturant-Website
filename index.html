@@ -1,127 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Dolce Vita | Italian Restaurant</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonbite Diner | Cosmic Burgers & Pizza</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #090014;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(9, 0, 20, 0.9);
+    z-index: 1000;
+}
+
+.nav-container {
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Bungee', sans-serif;
+    color: #ffd166;
+    font-size: 1.5rem;
+}
+
+.logo i {
+    color: #ff4ecd;
+}
+
+.nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #00d4ff;
+}
+
+.cart-count {
+    background: #ff4ecd;
+    padding: 2px 7px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    width: 27px;
+    height: 3px;
+    background: #ffd166;
+}
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(90deg, rgba(9,0,20,.95), rgba(255,78,205,.25)),
+        url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1800&q=80");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 130px 7% 70px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-tag {
+    background: #ff4ecd;
+    padding: 8px 18px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Bungee', sans-serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    color: #ffd166;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #eeeeee;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #ff4ecd, #00d4ff);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 35px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+}
+
+section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Bungee', sans-serif;
+    color: #ffd166;
+    font-size: 2.7rem;
+    margin-bottom: 45px;
+}
+
+.favorites {
+    background: #17102a;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.food-card {
+    background: #23173d;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.food-card:hover {
+    border-color: #00d4ff;
+}
+
+.food-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.food-card div {
+    padding: 22px;
+}
+
+.food-card h3 {
+    color: #ffd166;
+    margin-bottom: 10px;
+}
+
+.food-card p {
+    color: #d7d7d7;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #00d4ff;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.add-cart {
+    float: right;
+    background: #ff4ecd;
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.gallery-section {
+    background: #090014;
+}
+
+.slider-container {
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+.slider {
+    height: 520px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.slide {
+    display: none;
+    height: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffd166;
+    color: #090014;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.about {
+    background: #17102a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.about p {
+    color: #d7d7d7;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.contact {
+    background: #090014;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 12px;
+}
+
+textarea {
+    height: 130px;
+}
+
+iframe {
+    width: 100%;
+    height: 340px;
+    border: none;
+    border-radius: 18px;
+}
+
+.cart-box {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: white;
+    color: #090014;
+    width: 330px;
+    padding: 20px;
+    border-radius: 18px;
+    z-index: 999;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.remove {
+    background: #ff4ecd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 7px;
+}
+
+.clear-cart {
+    margin-top: 10px;
+    width: 100%;
+    background: #00d4ff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    background: #05000b;
+    text-align: center;
+    padding: 45px 7%;
+    color: #d7d7d7;
+}
+
+footer a {
+    color: #ffd166;
+    margin: 0 10px;
+}
+
+@media(max-width:768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #090014;
+        width: 100%;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .food-grid,
+    .about,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .slider {
+        height: 310px;
+    }
+
+    .cart-box {
+        width: 90%;
+        right: 5%;
+    }
+}
+</style>
 </head>
+
 <body>
-    <!-- Header & Navigation -->
-    <header class="header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-utensils"></i> La Dolce Vita
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav" id="nav">
-                <a href="index.html" class="active">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="#" class="cart-icon" id="cartIcon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </a>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>La Dolce Vita</h1>
-            <p>Authentic Italian Cuisine Since 1985</p>
-            <a href="menu.html" class="btn btn-primary">View Our Menu</a>
-        </div>
-    </section>
+<header class="header">
+    <div class="nav-container">
+        <a href="#home" class="logo"><i class="fas fa-moon"></i> Moonbite Diner</a>
 
-    <!-- Image Gallery Slider -->
-    <section class="gallery-section">
-        <h2>Our Gallery</h2>
-        <div class="slider-container">
-            <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-            <div class="slider" id="slider">
-                <div class="slide active">
-                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800)" alt="Restaurant Interior">
-                </div>
-                <div class="slide">
-                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800)" alt="Pasta Dish">
-                </div>
-                <div class="slide">
-                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800)" alt="Pizza">
-                </div>
-                <div class="slide">
-                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800)" alt="Wine Selection">
-                </div>
-                <div class="slide">
-                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800)" alt="Tiramisu">
-                </div>
-                <div class="slide">
-                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800)" alt="Dining Area">
-                </div>
-            </div>
-            <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-            <div class="slider-dots" id="sliderDots"></div>
-        </div>
-    </section>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
 
-    <!-- Shopping Cart Sidebar -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <p class="empty-cart">Your cart is empty</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
-            </div>
-            <button class="btn btn-clear" id="clearCart">Clear Cart</button>
-            <button class="btn btn-primary btn-checkout">Checkout</button>
-        </div>
-    </aside>
+        <nav class="nav" id="nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#cart"><i class="fas fa-shopping-cart"></i> <span class="cart-count" id="cartCount">0</span></a>
+        </nav>
+    </div>
+</header>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Business Hours</h4>
-                <p>Monday - Thursday: 11am - 10pm</p>
-                <p>Friday - Saturday: 11am - 11pm</p>
-                <p>Sunday: 12pm - 9pm</p>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Italian Way, New York, NY</p>
-                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                <p><i class="fas fa-envelope"></i> info@ladolcevita.com</p>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="hero-tag">Open Late • Space Theme • Fresh Food</span>
+        <h1>Cosmic Burgers, Pizza & Shakes</h1>
+        <p>Moonbite Diner is a late-night space diner serving mini burgers, cheesy pizza moons, loaded fries, and galaxy milkshakes.</p>
+        <a href="#menu" class="btn">Explore the Menu</a>
+    </div>
+</section>
+
+<section class="favorites" id="menu">
+    <h2 class="section-title">Our Menu</h2>
+
+    <div class="food-grid">
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80">
+            <div>
+                <h3>Moon Slider Trio</h3>
+                <p>Three mini cheeseburgers with lunar sauce.</p>
+                <span class="price">$10.99</span>
+                <button class="add-cart" onclick="addToCart('Moon Slider Trio', 10.99)">Add</button>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 La Dolce Vita. All rights reserved.</p>
-        </div>
-    </footer>
 
-    <script src="js/main.js"></script>
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80">
+            <div>
+                <h3>Pizza Moon</h3>
+                <p>Cheesy personal pizza with crispy crust.</p>
+                <span class="price">$12.99</span>
+                <button class="add-cart" onclick="addToCart('Pizza Moon', 12.99)">Add</button>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=900&q=80">
+            <div>
+                <h3>Cosmic Fries</h3>
+                <p>Loaded fries with cheese and special sauce.</p>
+                <span class="price">$6.99</span>
+                <button class="add-cart" onclick="addToCart('Cosmic Fries', 6.99)">Add</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+    <h2 class="section-title">Gallery</h2>
+
+    <div class="slider-container">
+        <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+
+        <div class="slider">
+            <div class="slide active"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1200&q=80"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=1200&q=80"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"></div>
+        </div>
+
+        <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=900&q=80">
+
+    <div>
+        <h2 class="section-title">About Us</h2>
+        <p>Moonbite Diner was created as a fun late-night restaurant for people who love comfort food with a creative twist.</p>
+        <p>Our mission is to serve fresh burgers, pizza, fries, and shakes in a colorful space-themed restaurant that feels different from a normal diner.</p>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact-container">
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message"></textarea>
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+
+        <iframe src="https://www.google.com/maps?q=New%20York%20City&output=embed"></iframe>
+    </div>
+</section>
+
+<div class="cart-box" id="cart">
+    <h3>Shopping Cart</h3>
+    <div id="cartItems">Cart is empty.</div>
+    <p><strong>Total: $<span id="cartTotal">0.00</span></strong></p>
+    <button class="clear-cart" onclick="clearCart()">Clear Cart</button>
+</div>
+
+<footer>
+    <p>Follow us: 
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+    </p>
+    <p>Hours: Monday - Sunday | 6:00 PM - 2:00 AM</p>
+    <p>© 2026 Moonbite Diner. All rights reserved.</p>
+</footer>
+
+<script>
+let cart = [];
+let slideIndex = 0;
+
+function toggleMenu() {
+    document.getElementById("nav").classList.toggle("active");
+}
+
+function addToCart(name, price) {
+    let item = cart.find(food => food.name === name);
+
+    if (item) {
+        item.quantity++;
+    } else {
+        cart.push({ name, price, quantity: 1 });
+    }
+
+    updateCart();
+}
+
+function updateCart() {
+    let cartItems = document.getElementById("cartItems");
+    let cartTotal = document.getElementById("cartTotal");
+    let cartCount = document.getElementById("cartCount");
+
+    cartItems.innerHTML = "";
+    let total = 0;
+    let count = 0;
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "Cart is empty.";
+    }
+
+    cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+        count += item.quantity;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <span>${item.name} x ${item.quantity}</span>
+                <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                <button class="remove" onclick="removeItem(${index})">X</button>
+            </div>
+        `;
+    });
+
+    cartTotal.innerText = total.toFixed(2);
+    cartCount.innerText = count;
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function clearCart() {
+    cart = [];
+    updateCart();
+}
+
+function changeSlide(direction) {
+    let slides = document.querySelectorAll(".slide");
+
+    slides[slideIndex].classList.remove("active");
+
+    slideIndex += direction;
+
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
+
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+    }
+
+    slides[slideIndex].classList.add("active");
+}
+
+setInterval(() => {
+    changeSlide(1);
+}, 4000);
+</script>
+
 </body>
 </html>
